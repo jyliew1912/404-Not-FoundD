@@ -2,6 +2,7 @@
 
 [![Unity](https://img.shields.io/badge/Engine-Unity%202D-222c37?style=for-the-badge&logo=unity)](https://unity.com/)
 [![Language](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![Code Quality & Linting](https://github.com/jyliew1912/404-Not-FoundD/actions/workflows/lint-check.yml/badge.svg)](https://github.com/jyliew1912/404-Not-FoundD/actions/workflows/lint-check.yml)
 
 > An educational 2D platformer engineered in Unity/C# that bridges computer networking fundamentals with interactive game mechanics. Players solve real-world protocol constraints across the 5 layers of the TCP/IP stack to restore a disconnected campus network.
 
