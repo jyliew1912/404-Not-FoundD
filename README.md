@@ -69,15 +69,18 @@ Network protocol stacks are traditionally taught through abstract diagrams and p
 ## 👤 Individual Engineering Contributions
 
 ### Core Modules Developed
-* **System Design & State Coordination**:
-  * Designed core game loop and handled asynchronous scene loads (`SceneManager.LoadSceneAsync`) with zero memory leaks.
-  * Formulated decoupled event emitters for health calculation, game pauses, and real-time score updates.
-* **Physics & Locomotion Mechanics**:
-  * Programmed multi-jump kinematics, 2D raycasting collision detection, and custom dynamic damping on varied surface materials (e.g., swamp/coral impedance).
-* **Cross-Scene State Persistence**:
-  * Implemented an I/O persistence module for player login credentials and continuous level telemetry data.
-* **Performance Optimization**:
-  * Profiled CPU/GPU spikes in Unity Profiler; reduced draw calls by batching 2D sprites into shared texture atlases and implementing object pooling for monsters and item spawners.
+* **Scene Orchestration & Flow Control**:
+  * Engineered centralized scene transition pipelines using Unity's `SceneManager.LoadSceneAsync`, guaranteeing seamless level switching across the 5 TCP/IP protocol stages.
+  * Managed scene lifecycle events to eliminate dangling references and prevent memory leaks during scene reloads.
+* **Global State & Variable Management**:
+  * Architected a centralized state management pattern (`GameManager` / Singleton) to coordinate global variables, protocol validation flags, and runtime stage states across decoupled scenes.
+  * Designed data flow conduits connecting backend game events to runtime progression logic.
+* **Interactive Gameplay & Collectible Item Mechanics**:
+  * Programmed scriptable behavior for core collectible entities (e.g., HTTP status code payloads, network tokens, and consumable items).
+  * Built trigger-based collision interaction pipelines (`OnTriggerEnter2D`) that handle payload evaluation and dynamic player buff execution.
+* **UI/UX Framework & View-State Binding**:
+  * Constructed the full dynamic user interface (Canvas architecture, health counters, protocol hint displays, and stage metrics).
+  * Decoupled UI rendering from core game logic using event callbacks, ensuring zero-latency HUD updates upon state changes.
 
 
 ## 🎮 Game Systems & Mechanics
@@ -108,13 +111,13 @@ Network protocol stacks are traditionally taught through abstract diagrams and p
 4. Navigate to `File` $\rightarrow$ `Build Settings...`, select target platform, ensure scenes `[Login, L5, L4, L3, L2, L1, Win]` are indexed, and select **Build and Run**.
 
 
-## 👥 Original Team & Collaborators
+## 👥 Engineering Team & Contributions
 
-* **余沛穎 (@YuPatty)**: Character Kinematics, Health & Score Subsystems, SFX Integration, Documentation.
-* **劉靖媛 (@jyliew1912)**: UI/UX Framework, Interactive Items, Scene Director, Global State Variables.
-* **陳湘昀 (@sony0505)**: Data Persistence, Camera Tracking Algorithms, Map Optimization, Integration & QA.
-* **莊昀潔 (@Jayechuang)**: In-Game Terminal Interface, Pause Menu Systems, Asset Design, Map Optimization.
-* **黃煜庭 (@ccuhyt)**: Authentication UI, Procedural Level Generation, Asset Design, Audio Synthesis.
+* **劉靖媛** ([@jyliew1912](https://github.com/jyliew1912)) — UI/UX Display Architecture, Interactive Item Logic, Scene Management, Global Variable & State Management.
+* **陳湘昀** ([@sony0505](https://github.com/sony0505)) — Data Persistence & File I/O, Dynamic Camera Controller, Map & Tilemap Optimization, Primary Item Mechanics, System Integration, Debugging & QA.
+* **莊昀潔** ([@Jayechuang](https://github.com/Jayechuang)) — In-Game Terminal Interface, Pause Menu Subsystem, 2D Asset Illustration, Primary Item Mechanics, Map Optimization, Debugging.
+* **黃煜庭** ([@ccuhyt](https://github.com/ccuhyt)) — Authentication & Login Interface, Procedural Map Generation, 2D Asset Illustration, Audio & SFX Engineering.
+* **余沛穎** ([@YuPatty](https://github.com/YuPatty)) — Player Kinematics & Locomotion, Score & Health System Architecture, Audio Integration, Item Logic, 2D Art Assets, Technical Documentation & README.
 
 
 ## 📚 References & Academic Resources
